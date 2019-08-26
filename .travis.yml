@@ -1,5 +1,9 @@
 sudo: required
 
+language: php
+php:
+  - 7.1.9
+
 deploy:
   provider: script
   script: bash $(pwd)/.deploy/deploy.sh
