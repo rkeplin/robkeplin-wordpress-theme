@@ -1,0 +1,7 @@
+sudo: required
+
+deploy:
+  provider: script
+  script: bash $(pwd)/.deploy/deploy.sh
+  on:
+    branch: master

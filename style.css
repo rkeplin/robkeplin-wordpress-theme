@@ -1,0 +1,152 @@
+/*
+Theme Name: Rob Keplin's Blog
+Author: Rob Keplin
+Author URI: https://www.rkeplin.com
+Version: 1.0
+*/
+
+/* Main elements */
+body {
+    background-color: #f8f9fa;
+    position: relative;
+}
+main {
+    margin-top: 110px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    line-height: 1.6;
+}
+.navbar li {
+    list-style: none;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.navbar li a.text-dark.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+footer {
+    min-height: 25vh;
+}
+.blog-link {
+    padding: .5rem 1rem;
+}
+/* Utilities */
+.bg-gray {
+    background-color: #f1f3f5;
+}
+.bg-light {
+    background-color: #f8f9fa;
+}
+.mb25 {
+    margin-bottom: 25px;
+}
+.pb25 {
+    padding-bottom: 25px;
+}
+a.anchor {
+    display: block;
+    position: relative;
+    top: -120px;
+    visibility: hidden;
+}
+.hash {
+    color: #CCC;
+}
+blockquote {
+    background: #EEE;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+}
+blockquote p {
+    display: inline;
+}
+
+/* Special elements */
+.about .card-img-top {
+    max-height: 330px;
+}
+.interests .card-img-top {
+    max-width: 100px;
+    margin: auto auto;
+    padding: 10px 0;
+}
+.interests .card-body {
+    padding: 0;
+    flex: none;
+}
+.contact label {
+    display: none;
+}
+
+/* Comments */
+#comments {
+    margin-top: 50px;
+}
+#comments .media-body {
+    padding-left: 20px;
+}
+#comments .media {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#comments .time {
+    margin-bottom: 10px;
+}
+#comments .media-body p {
+    font-size: 15px;
+    line-height: 1.6
+}
+.post-content {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+.post-content pre {
+    font-size: 16px;
+    line-height: 1;
+    background-color: #1a3856;
+    color: #fff9ea;
+    padding: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.pagination .screen-reader-text {
+    display: none;
+}
+.pagination {
+    margin-top: 20px;
+}
+.pagination .nav-links {
+    margin: auto auto;
+}
+.pagination a {
+    margin: 0 5px 0 5px;
+}
+.category {
+    margin-right: 10px;
+}
+/* Responsive */
+@media only screen and (max-width: 766px) {
+    main {
+        margin-top: 160px;
+    }
+    .interests, .interests-li {
+        display: none;
+    }
+    .contact {
+        background-color: #f1f3f5!important;
+    }
+    h1.display-4 {
+        font-size: 40px!important;
+    }
+    .media-list {
+        padding-left: 0;
+    }
+    #comments {
+        background-color: #f8f9fa;
+    }
+}
