@@ -1,8 +1,9 @@
 sudo: required
 
 language: php
-php:
-  - 7.1.9
+
+script:
+- echo "No tests, just a deployment..."
 
 deploy:
   provider: script
