@@ -10,4 +10,6 @@ ssh -t -oStrictHostKeyChecking=no -i $(pwd)/.deploy/travis_id_rsa travis@jersey2
 ssh -t -oStrictHostKeyChecking=no -i $(pwd)/.deploy/travis_id_rsa travis@jersey2.rkeplin.com "cd /opt/apps/rkeplin-blog/application/wp-content/themes/ && ln -sfn robkeplin-$DATE_WITH_TIME robkeplin"
 ssh -t -oStrictHostKeyChecking=no -i $(pwd)/.deploy/travis_id_rsa travis@jersey2.rkeplin.com "chown -h travis:33 /opt/apps/rkeplin-blog/application/wp-content/themes/robkeplin"
 
+ssh -t -oStrictHostKeyChecking=no -i $(pwd)/.deploy/travis_id_rsa travis@jersey1.rkeplin.com 'docker stack deploy -c /opt/stacks/blog.yml blog'
+
 rm -rf $(pwd)/.deploy/travis_id_rsa
