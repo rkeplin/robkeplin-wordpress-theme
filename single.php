@@ -3,7 +3,7 @@
 <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
         <?php $categories = get_the_category(); ?>
-        <div class="text-center p-5 bg-yellow" style="margin-top: -15px;">
+        <div class="text-center p-5 bg-yellow" style="margin-top: -20px;">
             <h1 class="display-4 mb25"><span class="hash">#</span> <?php the_title(); ?></h1>
             <div>
                 Category:
