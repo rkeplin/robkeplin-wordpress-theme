@@ -26,7 +26,7 @@
 </head>
 <body <?php echo (is_front_page()) ? 'data-spy="scroll" data-target="#navigation" data-offset="150"' : ''; ?>>
 
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 border-bottom shadow-sm fixed-top bg-light">
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 border-bottom shadow-sm fixed-top bg-light top-bar">
         <h5 class="my-0 mr-md-auto font-weight-normal"><a class="text-dark" href="<?php bloginfo('url') ?>"><?php echo get_bloginfo('name'); ?></h5>
 
         <ul id="navigation" class="navbar navbar-light bg-light my-2 my-md-0 mr-md-3">

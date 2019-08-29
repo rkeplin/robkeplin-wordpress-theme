@@ -29,6 +29,9 @@ h1.display-4 {
     text-decoration: underline;
     font-weight: bold;
 }
+.top-bar {
+    height: 91px;
+}
 footer {
     min-height: 25vh;
 }
@@ -148,18 +151,18 @@ blockquote p {
         margin-left: 0;
     }
 }
-@media only screen and (max-width: 766px) {
-    main {
-        margin-top: 160px;
-    }
-    .interests, .interests-li {
-        display: none;
-    }
+@media only screen and (max-width: 767px) {
     .contact {
         background-color: #f1f3f5!important;
     }
     h1.display-4 {
         font-size: 2.0rem!important
+    }
+    .top-bar h5 {
+        display: none;
+    }
+    .top-bar ul.mt-2, .top-bar ul.my-2 {
+        margin-top: 0!important;
     }
     .media-list {
         padding-left: 0;
