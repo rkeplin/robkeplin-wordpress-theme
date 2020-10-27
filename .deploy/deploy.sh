@@ -11,7 +11,7 @@ ssh -t -oStrictHostKeyChecking=no -i $(pwd)/.deploy/travis_id_rsa travis@jersey2
 ssh -t -oStrictHostKeyChecking=no -i $(pwd)/.deploy/travis_id_rsa travis@jersey1.rkeplin.com 'docker service update --force blog_rkeplin-blog'
 
 # Update plugins
-ssh -t -oStrictHostKeyChecking=no -i $(pwd)/.deploy/travis_id_rsa travis@jersey2.rkeplin.com 'rkplugin wordpress-seo 15.1.1'
+ssh -t -oStrictHostKeyChecking=no -i $(pwd)/.deploy/travis_id_rsa travis@jersey8.rkeplin.com 'rkplugin wordpress-seo 15.1.2'
 ssh -t -oStrictHostKeyChecking=no -i $(pwd)/.deploy/travis_id_rsa travis@jersey2.rkeplin.com 'rkplugin akismet 4.1.7'
 ssh -t -oStrictHostKeyChecking=no -i $(pwd)/.deploy/travis_id_rsa travis@jersey2.rkeplin.com 'rkplugin wordfence 7.4.12'
 ssh -t -oStrictHostKeyChecking=no -i $(pwd)/.deploy/travis_id_rsa travis@jersey2.rkeplin.com 'rkplugin wordpress-importer 0.7'
