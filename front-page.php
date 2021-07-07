@@ -10,13 +10,13 @@
                     Hi, my name is Rob Keplin.  And this is my personal website and blog.
                 </p>
                 <p class="lead">
-                    I am a Web Developer based in New Ipswich, New Hampshire. Feel free to check out my <a title="LinkedIn" href="//linkedin.com/in/robkeplin">LinkedIn</a> or <a title="GitHub" href="//github.com/rkeplin">GitHub</a>.
+                    I'm a Senior Software Engineer based in New Ipswich, New Hampshire. Feel free to check out my <a title="LinkedIn" href="//linkedin.com/in/robkeplin">LinkedIn</a> or <a title="GitHub" href="//github.com/rkeplin">GitHub</a>.
                 </p>
                 <p class="lead">
                     I love building things, and seeing projects go from ideas to finished products.
                 </p>
                 <p class="lead">
-                    Besides working full time and spending time with my beautiful wife and three magnificent children, - I am also available for freelance work.
+                    Besides working full time and spending time with my beautiful wife and three magnificent children, - I'm available for freelance work.
                 </p>
                 <p class="lead">
                     Please <a title="contact me" href="#contact">contact me</a> if you'd like something done.
