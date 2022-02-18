@@ -4,14 +4,17 @@
     <?php while ( have_posts() ) : the_post(); ?>
         <?php $categories = get_the_category(); ?>
         <div class="text-center p-5 bg-yellow" style="margin-top: -20px;">
-            <h1 class="display-4 mb25"><span class="hash">#</span> <?php the_title(); ?></h1>
+            <h1 class="display-4 mb20"><span class="hash">#</span> <?php the_title(); ?></h1>
+            <div class="mt-0 mb-3">
+                <a class="donate-with-crypto" href="https://commerce.coinbase.com/checkout/4fe7dc66-e2c6-48d2-b00e-9e550e646d1c">Donate with Crypto</a>
+                <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807"> </script>
+            </div>
             <div>
                 Category:
                 <?php foreach ($categories as $category) : ?>
                     <a class="category" title="<?php echo $category->name; ?>" href="<?php echo get_category_link($category) ?>"><?php echo $category->name; ?></a>
                 <?php endforeach; ?>
             </div>
-
             <?php the_post_thumbnail('large-thumbnail', array('class' => '')); ?>
         </div>
         <div class="container">
