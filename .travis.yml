@@ -3,10 +3,10 @@ sudo: required
 language: php
 
 script:
-- echo "No tests, just a deployment..."
+- echo "No tests, or deployment :( ..."
 
-deploy:
-  provider: script
-  script: bash $(pwd)/.deploy/deploy.sh
-  on:
-    branch: master
+#deploy:
+#  provider: script
+#  script: bash $(pwd)/.deploy/deploy.sh
+#  on:
+#    branch: master
