@@ -1,0 +1,94 @@
+# MariaDB - holds REAL blog content (posts, users, comments).
+# Requires a PVC and a dump/restore migration from the legacy server
+# before cutover - see MIGRATION-BLOG.md.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-blog-data
+  namespace: blog
+spec:
+  accessModes: ["ReadWriteOnce"]
+  storageClassName: do-block-storage-retain
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb-blog
+  namespace: blog
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: mariadb-blog
+  template:
+    metadata:
+      labels:
+        app: mariadb-blog
+    spec:
+      containers:
+        - name: mariadb
+          image: mariadb:10.4.2-bionic
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: blog-env
+                  key: MYSQL_ROOT_PASSWORD
+            - name: MYSQL_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: blog-env
+                  key: MYSQL_DATABASE
+            - name: MYSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: blog-env
+                  key: MYSQL_USER
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: blog-env
+                  key: MYSQL_PASSWORD
+          volumeMounts:
+            - name: mariadb-data
+              mountPath: /var/lib/mysql
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              memory: 512Mi
+          readinessProbe:
+            tcpSocket:
+              port: 3306
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 3306
+            initialDelaySeconds: 60
+            periodSeconds: 20
+      volumes:
+        - name: mariadb-data
+          persistentVolumeClaim:
+            claimName: mariadb-blog-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mariadb-blog
+  namespace: blog
+spec:
+  selector:
+    app: mariadb-blog
+  ports:
+    - name: mysql
+      port: 3306
+      targetPort: 3306
