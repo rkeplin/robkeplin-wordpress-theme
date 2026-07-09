@@ -13,8 +13,20 @@ if [[ -z "$POD" ]]; then
   exit 1
 fi
 
-echo "Copying theme files to $POD..."
-kubectl cp "$THEME_DIR" "$POD":/var/www/html/wp-content/themes/robkeplin-wordpress-theme -n blog
+ACTIVE_THEME=$(kubectl exec -n blog "$POD" -- php -r "
+define('ABSPATH', '/var/www/html/');
+\$_SERVER['HTTP_HOST'] = 'localhost';
+require '/var/www/html/wp-load.php';
+echo get_option('template');
+" 2>/dev/null)
+
+if [[ -z "$ACTIVE_THEME" ]]; then
+  echo "Error: could not detect active WordPress theme" >&2
+  exit 1
+fi
+
+echo "Copying theme files to $POD (theme: $ACTIVE_THEME)..."
+kubectl cp "$THEME_DIR/." "$POD":/var/www/html/wp-content/themes/"$ACTIVE_THEME" -n blog
 
 echo "Flushing OPcache..."
 kubectl exec -n blog "$POD" -- apachectl graceful 2>/dev/null || true
