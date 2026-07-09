@@ -1,8 +1,8 @@
 NS ?= blog
 
-.PHONY: up down logs
+.PHONY: up down logs dev-data
 
-up:
+dev:
 	docker-compose up -d
 
 down:
@@ -10,6 +10,10 @@ down:
 
 logs:
 	docker-compose logs -f
+
+# Pull prod DB into local docker-compose mariadb and rewrite URLs for local dev.
+dev-data:
+	bash bin/dev-data.sh
 
 push:
 	bin/push.sh
