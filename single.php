@@ -6,7 +6,7 @@
         <div class="text-center p-5 bg-yellow" style="margin-top: -20px;">
             <h1 class="display-4 mb20"><span class="hash">#</span> <?php the_title(); ?></h1>
             <div class="mt-0 mb-3">
-                <a class="btn btn-outline-primary" href="https://donate.stripe.com/8x25kDeRy1JZfK8g1B28800">Donate (100% Optional - But Greatly Appreciated!)</a>
+                <a class="btn btn-outline-primary" href="https://donate.stripe.com/8x25kDeRy1JZfK8g1B28800">Donate (100% Optional, But Greatly Appreciated!)</a>
             </div>
             <div>
                 Category:
