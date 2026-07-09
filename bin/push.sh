@@ -15,4 +15,8 @@ fi
 
 echo "Copying theme files to $POD..."
 kubectl cp "$THEME_DIR" "$POD":/var/www/html/wp-content/themes/robkeplin-wordpress-theme -n blog
+
+echo "Flushing OPcache..."
+kubectl exec -n blog "$POD" -- apachectl graceful 2>/dev/null || true
+
 echo "Done."
