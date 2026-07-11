@@ -2,7 +2,7 @@
         <footer class="pt-4 my-md-5 pt-md-5">
             <div class="row">
                 <div class="col-12 col-md text-center">
-                    <small class="text-muted">&copy; 2019 Rob Keplin</small>
+                    <small class="text-muted">&copy; 2019 - <?php echo date('Y'); ?> Rob Keplin</small>
                 </div>
             </div>
         </footer>
